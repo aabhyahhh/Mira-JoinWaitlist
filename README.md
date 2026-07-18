@@ -81,5 +81,13 @@ wired in.
 
 ## Deployment
 
-Deploy to Vercel and configure `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` (and
-optionally `DEMO_VIDEO_URL`) in the project settings.
+`vercel.json` pins the framework/build commands so Vercel builds this
+correctly regardless of dashboard defaults. To connect the repo:
+
+1. Push this repo to GitHub (or GitLab/Bitbucket).
+2. In the [Vercel dashboard](https://vercel.com/new), "Import Project"
+   and select the repo — Vercel reads `vercel.json` automatically.
+   (Or from the CLI: `npx vercel link` from this directory.)
+3. In the project's Settings → Environment Variables, add
+   `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` (and optionally `DEMO_VIDEO_URL`).
+4. Deploy.
