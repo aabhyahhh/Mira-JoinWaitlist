@@ -1,7 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="720" height="1280" viewBox="0 0 720 1280">
-  <rect width="720" height="1280" fill="#241f1c"/>
-  <circle cx="360" cy="600" r="90" fill="#f15a3c"/>
-  <path d="M330 560 L410 600 L330 640 Z" fill="#fbf6ef"/>
-  <text x="360" y="740" font-family="Georgia, serif" font-size="36" fill="#fbf6ef" text-anchor="middle">Mira in action</text>
-  <text x="360" y="784" font-family="Arial, sans-serif" font-size="20" fill="#cec8c2" text-anchor="middle">Demo video coming soon</text>
+  <rect width="720" height="1280" fill="#1a1714"/>
+  <g transform="translate(360,600)">
+    <circle r="90" fill="#0f0e0c"/>
+    <g stroke="#c9a882" stroke-width="14" stroke-linecap="round">
+      <line x1="0" y1="-58" x2="0" y2="58"/>
+      <line x1="-50" y1="-29" x2="50" y2="29"/>
+      <line x1="-50" y1="29" x2="50" y2="-29"/>
+    </g>
+    <circle r="12" fill="#0f0e0c" stroke="#c9a882" stroke-width="8"/>
+  </g>
+  <text x="360" y="744" font-family="Georgia, serif" font-style="italic" font-size="36" fill="#f5f0e8" text-anchor="middle">Mira in action</text>
 </svg>

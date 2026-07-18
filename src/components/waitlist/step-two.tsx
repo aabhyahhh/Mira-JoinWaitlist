@@ -45,10 +45,8 @@ export function StepTwo({
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl text-charcoal-900 sm:text-3xl">
-          About your business
-        </h1>
-        <p className="mt-2 text-sm leading-relaxed text-charcoal-500">
+        <h1 className="page-title text-ink-900">About your business</h1>
+        <p className="mt-2 text-sm leading-relaxed text-ink-500">
           Helps us tailor what we show you.
         </p>
       </div>

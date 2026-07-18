@@ -35,7 +35,7 @@ export function Faq() {
   return (
     <section className="px-4 py-16">
       <div className="mx-auto max-w-xl">
-        <h2 className="text-center text-2xl text-charcoal-900 sm:text-3xl">
+        <h2 className="page-title text-center text-ink-900">
           Questions, answered
         </h2>
         <div className="mt-8 divide-y divide-border rounded-2xl border border-border bg-card">
@@ -49,13 +49,13 @@ export function Faq() {
                   className="flex w-full items-center justify-between gap-4 py-5 text-left"
                   aria-expanded={isOpen}
                 >
-                  <span className="text-base font-medium text-charcoal-900">
+                  <span className="text-base font-medium text-ink-900">
                     {faq.question}
                   </span>
                   <ChevronDown
                     className={cn(
-                      "h-5 w-5 shrink-0 text-charcoal-400 transition-transform",
-                      isOpen && "rotate-180 text-coral-500"
+                      "h-5 w-5 shrink-0 text-ink-400 transition-transform",
+                      isOpen && "rotate-180 text-terracotta-500"
                     )}
                   />
                 </button>
@@ -68,7 +68,7 @@ export function Faq() {
                       transition={{ duration: 0.25 }}
                       className="overflow-hidden"
                     >
-                      <p className="pb-5 text-sm leading-relaxed text-charcoal-600">
+                      <p className="pb-5 text-sm leading-relaxed text-ink-600">
                         {faq.answer}
                       </p>
                     </motion.div>

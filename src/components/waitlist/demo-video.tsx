@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import Image from "next/image";
 import { Volume2, VolumeX, Play } from "lucide-react";
 
 import { cn } from "@/lib/utils";
@@ -8,9 +9,11 @@ import { cn } from "@/lib/utils";
 export function DemoVideo({
   src,
   poster,
+  onPlayStateChange,
 }: {
   src: string;
   poster: string;
+  onPlayStateChange?: (playing: boolean) => void;
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [muted, setMuted] = useState(true);
@@ -32,14 +35,21 @@ export function DemoVideo({
 
   if (hasError) {
     return (
-      <div className="flex aspect-[9/16] w-full max-w-xs items-center justify-center rounded-3xl bg-charcoal-100 text-center text-sm text-charcoal-400">
-        Demo video coming soon.
+      <div className="flex aspect-[9/16] w-full max-w-xs flex-col items-center justify-center gap-4 rounded-3xl bg-ink-900">
+        <Image
+          src="/logo.png"
+          alt=""
+          width={64}
+          height={64}
+          className="h-16 w-16 opacity-90"
+        />
+        <p className="text-sm text-parchment-100/60">Demo video coming soon</p>
       </div>
     );
   }
 
   return (
-    <div className="relative mx-auto w-full max-w-xs overflow-hidden rounded-3xl bg-charcoal-900 shadow-lg">
+    <div className="relative mx-auto w-full max-w-xs overflow-hidden rounded-3xl bg-ink-900 shadow-lg">
       <video
         ref={videoRef}
         className="aspect-[9/16] w-full object-cover"
@@ -50,8 +60,15 @@ export function DemoVideo({
         loop={false}
         playsInline
         onError={() => setHasError(true)}
-        onPlay={() => setIsPlaying(true)}
-        onPause={() => setIsPlaying(false)}
+        onPlay={() => {
+          setIsPlaying(true);
+          onPlayStateChange?.(true);
+        }}
+        onPause={() => {
+          setIsPlaying(false);
+          onPlayStateChange?.(false);
+        }}
+        onEnded={() => onPlayStateChange?.(false)}
       />
 
       <button
@@ -72,7 +89,7 @@ export function DemoVideo({
             "absolute inset-0 flex items-center justify-center bg-black/20 transition-opacity"
           )}
         >
-          <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 text-charcoal-900">
+          <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 text-ink-900">
             <Play className="ml-1 h-7 w-7" fill="currentColor" />
           </span>
         </button>

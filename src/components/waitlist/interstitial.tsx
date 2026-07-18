@@ -24,8 +24,8 @@ export function Interstitial({
       >
         🎉
       </motion.div>
-      <h2 className="mt-5 text-2xl text-charcoal-900">Almost there</h2>
-      <p className="mt-3 max-w-xs text-base leading-relaxed text-charcoal-600">
+      <h2 className="page-title mt-5 text-ink-900">Almost there</h2>
+      <p className="mt-3 max-w-xs text-base leading-relaxed text-ink-600">
         Want a demo tailored to your property? Takes about 60 seconds.
       </p>
 

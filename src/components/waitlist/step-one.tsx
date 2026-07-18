@@ -47,10 +47,8 @@ export function StepOne({
   return (
     <form onSubmit={handleSubmit} className="space-y-5" noValidate>
       <div>
-        <h1 className="text-2xl text-charcoal-900 sm:text-3xl">
-          Join the Mira waitlist
-        </h1>
-        <p className="mt-2 text-sm leading-relaxed text-charcoal-500">
+        <h1 className="page-title text-ink-900">Join the Mira waitlist</h1>
+        <p className="mt-2 text-sm leading-relaxed text-ink-500">
           20 seconds and you&apos;re on the list.
         </p>
       </div>

@@ -17,8 +17,15 @@ const config: Config = {
     },
     extend: {
       fontFamily: {
-        serif: ["var(--font-lora)", "Cambria", "Georgia", "serif"],
-        sans: ["var(--font-inter)", "Calibri", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "Georgia", "serif"],
+        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        mono: [
+          "var(--font-mono)",
+          "DM Mono",
+          "SFMono-Regular",
+          "Menlo",
+          "monospace",
+        ],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -50,41 +57,66 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        coral: {
-          50: "#fff4f1",
-          100: "#ffe4dc",
-          200: "#ffc7b8",
-          300: "#ffa088",
-          400: "#ff7a5c",
-          500: "#f15a3c",
-          600: "#dd4429",
-          700: "#b8351f",
-          800: "#932c1c",
-          900: "#78281c",
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
         },
-        charcoal: {
-          50: "#f6f5f4",
-          100: "#e7e4e1",
-          200: "#cec8c2",
-          300: "#aca39a",
-          400: "#877c71",
-          500: "#6b615a",
-          600: "#544c46",
-          700: "#443d38",
-          800: "#332e2a",
-          900: "#241f1c",
+        /* Brand accent — terracotta red, same hue as primary/destructive. */
+        terracotta: {
+          50: "#fcf0ee",
+          100: "#f7dcd9",
+          200: "#f1bdb7",
+          300: "#e99a90",
+          400: "#e17465",
+          500: "#d9513f",
+          600: "#c83a27",
+          700: "#a63021",
+          800: "#88271b",
+          900: "#6f2016",
         },
-        cream: {
-          DEFAULT: "#fbf6ef",
-          50: "#fefdfb",
-          100: "#fbf6ef",
-          200: "#f5ebdc",
+        /* Near-black warm foreground and its tints. */
+        ink: {
+          50: "#f6f5f3",
+          100: "#e9e6e2",
+          200: "#d3ccc5",
+          300: "#b4a89d",
+          400: "#90806f",
+          500: "#6e6154",
+          600: "#564c43",
+          700: "#3f3831",
+          800: "#2b2621",
+          900: "#1a1714",
+        },
+        /* Parchment/cream surfaces. */
+        parchment: {
+          DEFAULT: "#f5f0e8",
+          50: "#fdfdfb",
+          100: "#fcfaf8",
+          200: "#f6f1ea",
+          300: "#f0e8db",
+        },
+        /* Tan/gold ring + warm accent, matches the logo mark. */
+        gold: {
+          50: "#f9f5f1",
+          100: "#f0e6db",
+          200: "#e0cdb8",
+          300: "#d7bfa2",
+          400: "#c9a882",
+          500: "#ba8f5f",
+          600: "#a47947",
         },
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      boxShadow: {
+        "warm-sm": "0 1px 2px hsl(var(--shadow-color) / 0.06)",
+        warm:
+          "0 1px 3px hsl(var(--shadow-color) / 0.08), 0 1px 2px hsl(var(--shadow-color) / 0.05)",
+        "warm-lg":
+          "0 8px 24px hsl(var(--shadow-color) / 0.12), 0 2px 8px hsl(var(--shadow-color) / 0.06)",
       },
       keyframes: {
         "accordion-down": {

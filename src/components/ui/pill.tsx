@@ -17,7 +17,7 @@ const Pill = React.forwardRef<HTMLButtonElement, PillProps>(
           "min-h-[3rem] rounded-2xl border-2 px-5 py-3 text-[15px] font-medium leading-snug transition-all active:scale-[0.97]",
           selected
             ? "border-primary bg-primary text-primary-foreground shadow-sm"
-            : "border-input bg-card text-charcoal-700 hover:border-coral-300 hover:bg-coral-50",
+            : "border-input bg-card text-ink-700 hover:border-terracotta-300 hover:bg-terracotta-50",
           className
         )}
         {...props}
