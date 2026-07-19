@@ -1,27 +1,26 @@
 "use client";
 
-import { SiteHeader } from "@/components/landing/site-header";
 import { WaitlistWizard } from "@/components/waitlist/waitlist-wizard";
 import { MorphTrack } from "@/components/story/morph-track";
+import { RoomEnvironment } from "@/components/story/room-environment";
 import { WaitlistReveal } from "@/components/story/waitlist-reveal";
-import { BeatRinging } from "@/components/story/beat-ringing";
-import { BeatCallInterface } from "@/components/story/beat-call-interface";
-import { BeatConversation } from "@/components/story/beat-conversation";
-import { BeatQualifiedLead } from "@/components/story/beat-qualified-lead";
-import { BeatDashboard } from "@/components/story/beat-dashboard";
+import { BeatApartment } from "@/components/story/beat-apartment";
+import { BeatOverwhelm } from "@/components/story/beat-overwhelm";
+import { BeatMiraAnswers } from "@/components/story/beat-mira-answers";
+import { BeatScaling } from "@/components/story/beat-scaling";
+import { BeatWorkflow } from "@/components/story/beat-workflow";
 import { BeatMorning } from "@/components/story/beat-morning";
 
 export function LandingClient({ demoVideoUrl }: { demoVideoUrl: string }) {
   return (
     <main>
-      <SiteHeader />
-
       <MorphTrack>
-        <BeatRinging index={0} />
-        <BeatCallInterface index={1} />
-        <BeatConversation index={2} />
-        <BeatQualifiedLead index={3} />
-        <BeatDashboard index={4} />
+        <RoomEnvironment />
+        <BeatApartment index={0} />
+        <BeatOverwhelm index={1} />
+        <BeatMiraAnswers index={2} />
+        <BeatScaling index={3} />
+        <BeatWorkflow index={4} />
         <BeatMorning index={5} />
       </MorphTrack>
 

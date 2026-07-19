@@ -1,10 +1,10 @@
 "use client";
 
-import { motion, useTransform } from "framer-motion";
+import { motion, useTransform, type MotionValue } from "framer-motion";
 import type { ReactNode } from "react";
 
 import { useMorphProgress } from "@/components/story/morph-track";
-import { crossfadeRange } from "@/components/story/motion";
+import { beatRange, crossfadeRange } from "@/components/story/motion";
 
 /**
  * A single full-screen layer in the morph sequence. Fades in/out based on
@@ -53,5 +53,24 @@ export function Beat({
 export function useBeatProgress(index: number, overlap = 0.35) {
   const progress = useMorphProgress();
   const range = crossfadeRange(index, overlap);
-  return { progress, range };
+  const [start, end] = beatRange(index);
+  return { progress, range, start, end, span: end - start };
+}
+
+/**
+ * Shared stagger-reveal transform: an item fades/scales/slides in as
+ * progress crosses [revealAt, revealAt + revealSpan]. Every beat's
+ * notification cards, chat bubbles, pipeline nodes, and property markers
+ * use this same shape, so it lives here once instead of being
+ * re-implemented per beat.
+ */
+export function useReveal(
+  progress: MotionValue<number>,
+  revealAt: number,
+  revealSpan: number
+) {
+  const opacity = useTransform(progress, [revealAt, revealAt + revealSpan], [0, 1]);
+  const scale = useTransform(progress, [revealAt, revealAt + revealSpan], [0.85, 1]);
+  const y = useTransform(progress, [revealAt, revealAt + revealSpan], [12, 0]);
+  return { opacity, scale, y };
 }
