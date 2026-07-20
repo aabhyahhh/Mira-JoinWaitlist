@@ -3,6 +3,7 @@
 import { WaitlistWizard } from "@/components/waitlist/waitlist-wizard";
 import { MorphTrack } from "@/components/story/morph-track";
 import { RoomEnvironment } from "@/components/story/room-environment";
+import { WindowTimeline } from "@/components/story/window-timeline";
 import { WaitlistReveal } from "@/components/story/waitlist-reveal";
 import { BeatApartment } from "@/components/story/beat-apartment";
 import { BeatOverwhelm } from "@/components/story/beat-overwhelm";
@@ -16,6 +17,7 @@ export function LandingClient({ demoVideoUrl }: { demoVideoUrl: string }) {
     <main>
       <MorphTrack>
         <RoomEnvironment />
+        <WindowTimeline />
         <BeatApartment index={0} />
         <BeatOverwhelm index={1} />
         <BeatMiraAnswers index={2} />

@@ -4,6 +4,11 @@ import { useEffect } from "react";
 import Image from "next/image";
 import { motion, useTransform, useMotionValue, type MotionValue } from "framer-motion";
 
+import { useViewport } from "@/lib/use-viewport";
+import { LOGO_SCALE } from "@/lib/orbit";
+
+const BASE_SIZE_PX = 80;
+
 /**
  * The one object that carries the whole story: the Mira mark, lit against
  * the dark room. It starts as a single calm point of light, flickers under
@@ -11,6 +16,10 @@ import { motion, useTransform, useMotionValue, type MotionValue } from "framer-m
  * multiplies into a skyline for scale, and finally floods with dawn. Every
  * beat reuses this same object so the throughline reads as one thing
  * changing state, not six different illustrations.
+ *
+ * Its base size is breakpoint-driven (LOGO_SCALE), not just a single
+ * Tailwind sm: jump — on mobile the mark should dominate the frame, not
+ * shrink proportionally with everything else.
  */
 export function Window({
   glow,
@@ -24,6 +33,8 @@ export function Window({
   speaking?: boolean;
   className?: string;
 }) {
+  const { tier } = useViewport();
+  const sizePx = Math.round(BASE_SIZE_PX * LOGO_SCALE[tier]);
   const flickerMultiplier = useMotionValue(1);
 
   useEffect(() => {
@@ -57,25 +68,26 @@ export function Window({
         [0, 1].map((i) => (
           <motion.span
             key={i}
-            className="pointer-events-none absolute h-16 w-16 rounded-full border border-gold-200/40 sm:h-20 sm:w-20"
+            style={{ height: sizePx, width: sizePx }}
+            className="pointer-events-none absolute rounded-full border border-gold-200/40"
             animate={{ scale: [1, 1.6], opacity: [0.5, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeOut", delay: i * 1 }}
           />
         ))}
 
       <motion.div
-        style={{ opacity, boxShadow }}
+        style={{ opacity, boxShadow, height: sizePx, width: sizePx }}
         // A near-imperceptible idle breathing scale — the mark is never
         // perfectly static, even when nothing else is happening on screen.
         animate={{ scale: [1, 1.015, 1] }}
         transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-        className={`relative flex h-16 w-16 items-center justify-center rounded-full bg-ink-900 sm:h-20 sm:w-20 ${className ?? ""}`}
+        className={`relative flex items-center justify-center rounded-full bg-ink-900 ${className ?? ""}`}
       >
         <Image
           src="/logo.png"
           alt=""
-          width={80}
-          height={80}
+          width={sizePx}
+          height={sizePx}
           className="h-full w-full rounded-full object-cover"
         />
       </motion.div>

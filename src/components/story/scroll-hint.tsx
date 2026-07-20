@@ -16,12 +16,12 @@ export function ScrollHint({ opacity }: { opacity: MotionValue<number> }) {
   return (
     <motion.div
       style={{ opacity, y }}
-      className="pointer-events-none absolute bottom-12 flex flex-col items-center gap-3"
+      className="pointer-events-none absolute bottom-10 flex w-full flex-col items-center gap-3 px-6 sm:bottom-12"
     >
       <motion.p
         animate={{ opacity: [0.6, 1, 0.6] }}
         transition={{ duration: 2.6, repeat: Infinity, ease: "easeInOut" }}
-        className="text-[11px] font-medium uppercase tracking-[0.3em] text-parchment-300/80"
+        className="max-w-[16rem] text-balance text-center text-[10px] font-medium uppercase leading-relaxed tracking-[0.2em] text-parchment-300/80 sm:max-w-none sm:text-[11px] sm:tracking-[0.3em]"
       >
         Scroll to experience a day in an Airbnb host&apos;s life
       </motion.p>

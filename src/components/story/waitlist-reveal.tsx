@@ -27,8 +27,8 @@ export function WaitlistReveal({ children }: { children: ReactNode }) {
 
   return (
     <div ref={trackRef} className="relative" style={{ height: "180vh" }}>
-      <div className="sticky top-0 flex h-screen w-full items-center justify-center px-6">
-        <motion.div style={{ clipPath, scale, filter, opacity }} className="w-full max-w-md">
+      <div className="sticky top-0 flex h-screen w-full items-center justify-center overflow-y-auto px-6 py-10">
+        <motion.div style={{ clipPath, scale, filter, opacity }} className="my-auto w-full max-w-md">
           {children}
         </motion.div>
       </div>

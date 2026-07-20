@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useInView, useTransform } from "framer-motion";
 
 import { Beat, useBeatProgress } from "@/components/story/beat";
-import { Window } from "@/components/story/window-motif";
 
 const LINE = "Yes — free parking right outside the building.";
 
@@ -31,8 +30,6 @@ export function BeatMiraAnswers({ index }: { index: number }) {
   const fadeOutStart = start + span * 0.82;
   const fadeOutEnd = start + span * 0.94;
 
-  const windowGlow = useTransform(progress, [start, start + span * 0.2], [0.4, 1]);
-  const windowScale = useTransform(progress, [start, start + span * 0.2], [0.85, 1]);
   const badgeOpacity = useTransform(
     progress,
     [start + span * 0.06, start + span * 0.16, start + span * 0.56, start + span * 0.64],
@@ -56,16 +53,12 @@ export function BeatMiraAnswers({ index }: { index: number }) {
       <div ref={sceneRef} className="relative flex flex-col items-center gap-8 px-6">
         <motion.p
           style={{ opacity: badgeOpacity }}
-          className="text-[11px] font-medium uppercase tracking-[0.35em] text-gold-300"
+          className="absolute top-[38%] text-[11px] font-medium uppercase tracking-[0.35em] text-gold-300"
         >
           Mira answered
         </motion.p>
 
-        <motion.div style={{ scale: windowScale }}>
-          <Window glow={windowGlow} speaking={inView && chars < LINE.length} />
-        </motion.div>
-
-        <div className="relative grid min-h-[3.5rem] max-w-sm place-items-center">
+        <div className="relative mt-24 grid min-h-[3.5rem] max-w-sm place-items-center">
           <motion.p
             style={{ opacity: lineOpacity }}
             className="col-start-1 row-start-1 text-balance text-center font-display text-xl italic leading-relaxed text-parchment-100 sm:text-2xl"
