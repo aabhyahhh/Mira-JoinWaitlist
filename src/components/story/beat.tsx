@@ -13,7 +13,7 @@ import { beatRange, crossfadeRange } from "@/components/story/motion";
  */
 export function Beat({
   index,
-  overlap = 0.35,
+  overlap = 0.12,
   holdAtEnd = false,
   children,
   className,
@@ -50,7 +50,7 @@ export function Beat({
 }
 
 /** Convenience hook for beats that need finer-grained transforms of the shared progress. */
-export function useBeatProgress(index: number, overlap = 0.35) {
+export function useBeatProgress(index: number, overlap = 0.12) {
   const progress = useMorphProgress();
   const range = crossfadeRange(index, overlap);
   const [start, end] = beatRange(index);

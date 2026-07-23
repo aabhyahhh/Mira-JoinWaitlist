@@ -24,8 +24,8 @@ const EDGE_PADDING: Record<ViewportTier, number> = {
 /** Half the logo's on-screen footprint per breakpoint (BASE_SIZE_PX * LOGO_SCALE / 2), kept in sync with window-motif.tsx. */
 const LOGO_HALF_SIZE: Record<ViewportTier, number> = {
   desktop: 40,
-  tablet: 46,
-  mobile: 60,
+  tablet: 40,
+  mobile: 40,
 };
 
 /** Extra clearance beyond the logo's edge before anything is allowed to orbit. */
@@ -83,12 +83,12 @@ export function orbitPosition(
 export const FRAGMENT_COUNT: Record<ViewportTier, number> = {
   desktop: 8,
   tablet: 6,
-  mobile: 4,
+  mobile: 6,
 };
 
-/** Relative logo scale multiplier per breakpoint — the mark should dominate more, not less, as the screen shrinks. */
+/** Relative logo scale multiplier per breakpoint — kept at 1 everywhere so the mark's proportions stay consistent across devices. */
 export const LOGO_SCALE: Record<ViewportTier, number> = {
   desktop: 1,
-  tablet: 1.15,
-  mobile: 1.5,
+  tablet: 1,
+  mobile: 1,
 };

@@ -168,9 +168,9 @@ export function BeatScaling({ index }: { index: number }) {
       <div className="relative flex h-full w-full items-center justify-center">
         <motion.h2
           style={{ opacity: headlineOpacity }}
-          className="absolute top-[24%] max-w-sm px-6 text-balance text-center text-2xl leading-snug text-parchment-100 sm:text-3xl"
+          className="absolute top-[34%] max-w-sm px-6 text-balance text-center text-2xl leading-snug text-parchment-100 sm:text-3xl"
         >
-          It was never just one window.
+          Let Mira handle the rest...
         </motion.h2>
 
         {(() => {
@@ -225,7 +225,7 @@ export function BeatScaling({ index }: { index: number }) {
 
         <motion.p
           style={{ opacity: captionOpacity }}
-          className="absolute bottom-[20%] text-sm font-medium text-parchment-300"
+          className="absolute bottom-[40%] text-2xl font-medium text-parchment-300"
         >
           One Mira. Every property.
         </motion.p>

@@ -5,7 +5,7 @@ import { motion, useInView, useTransform } from "framer-motion";
 
 import { Beat, useBeatProgress } from "@/components/story/beat";
 
-const LINE = "Yes — free parking right outside the building.";
+const LINE = "I've shared the property photos and details with you on WhatsApp. Please take a look.";
 
 export function BeatMiraAnswers({ index }: { index: number }) {
   const { progress, start, span } = useBeatProgress(index);
@@ -68,11 +68,11 @@ export function BeatMiraAnswers({ index }: { index: number }) {
           </motion.p>
           <motion.p
             style={{ opacity: closingOpacity }}
-            className="col-start-1 row-start-1 text-balance text-center text-2xl leading-snug text-parchment-100 sm:text-3xl"
+            className="col-start-1 row-start-1 text-balance text-center text-2xl leading-snug text-parchment-100 sm:text-2xl"
           >
-            Your business deserves your attention.
+            Give your guests instant answers. 
             <br />
-            Not repetitive questions.
+            Give yourself your time back.
           </motion.p>
         </div>
       </div>

@@ -6,7 +6,7 @@ import { motion, useTransform } from "framer-motion";
 import { useMorphProgress } from "@/components/story/morph-track";
 import { Window } from "@/components/story/window-motif";
 
-const LINE = "Yes — free parking right outside the building.";
+const LINE = "I've shared the property photos and details with you on WhatsApp. Please take a look.";
 
 /**
  * The single persistent Mira mark for the whole pinned track. Every beat

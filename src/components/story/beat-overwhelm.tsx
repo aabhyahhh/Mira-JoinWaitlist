@@ -150,7 +150,7 @@ export function BeatOverwhelm({ index }: { index: number }) {
   const idealMaxWidth = viewport.tier === "desktop" ? 176 : viewport.tier === "tablet" ? 176 : 120;
 
   return (
-    <Beat index={index} overlap={0.15}>
+    <Beat index={index} overlap={0.08}>
       <div className="relative flex h-full w-full items-center justify-center">
         {visibleFragments.map((text, i) => {
           const slot = SLOTS[i];

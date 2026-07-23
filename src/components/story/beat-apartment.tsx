@@ -37,7 +37,7 @@ export function BeatApartment({ index }: { index: number }) {
           style={{ opacity: headlineOpacity, y: headlineY, top: headlineTopPx, translateY: "-50%" }}
           className="absolute max-w-md text-balance px-6 text-center text-3xl leading-snug text-parchment-100 sm:text-4xl"
         >
-          One window. One business.
+          Your business deserves better than a missed call...
         </motion.h2>
 
         <ScrollHint opacity={hintOpacity} />
